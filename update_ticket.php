@@ -1,10 +1,8 @@
 <html>
 <body>
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "toor";
-$dbname = "Tickets";
+
+include('connect.php');
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {

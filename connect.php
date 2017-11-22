@@ -1,0 +1,1 @@
+<?php $username = root; $password = toor; $servername = localhost; $dbname = Tickets; ?>

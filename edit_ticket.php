@@ -2,25 +2,17 @@
 <head>
   <title>Edit Ticket</title>
 </head>
-<<<<<<< HEAD
-<body>
-
-=======
 
 <body>
->>>>>>> 91592ca021f688723faad1b8aae483302be8059e
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "toor";
-$dbname = "Tickets";
+
+include('connect.php');
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
 }
 
-<<<<<<< HEAD
 $uid = $_GET['uid'];
 $action = "update_ticket.php?uid=" . $uid;
 $sql = "SELECT * FROM Ticket_Data WHERE uid='$uid'";
@@ -46,16 +38,6 @@ $conn->close();
   Assigned Persons: <br>
   <textarea name="assigned_persons"> <?php echo $assigned_persons ?></textarea> <br>
   <input type="submit"  value="Save Changes"/>
-=======
-$conn->close();
-?>
-
-
-<form action="" method="post">
-  <textarea name="text"> <?php echo htmlspecialchars($text) ?></textarea>
-  <input type="submit" value="Save Changes"/>
->>>>>>> 91592ca021f688723faad1b8aae483302be8059e
-</form>
 
 </body>
 </html>

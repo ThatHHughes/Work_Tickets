@@ -3,11 +3,8 @@
   $file = $_GET['fn'];
   $text = file_get_contents($file);
 
-<<<<<<< HEAD
+
   $action = "update_rm.php?fn=" . $file;
-=======
-  $action = "update.php?fn=" . $file;
->>>>>>> 91592ca021f688723faad1b8aae483302be8059e
 ?>
 
 <head>
