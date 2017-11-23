@@ -1,0 +1,16 @@
+body {
+  font-family: sans-serif;
+  color: #222222;
+}
+.description_box {
+  width: 80%;
+  height: 40%;
+}
+input {
+  border: 1px solid #606060;
+  width: 80%;
+  padding: 3px;
+}
+textarea {
+  width: 80%;
+}

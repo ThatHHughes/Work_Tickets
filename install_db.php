@@ -1,5 +1,8 @@
+<!-- This file is designed to install Tickets' SQL table upon initial setup -->
+
 <?php
 
+//Get credentials for SQL and connect
 $username = $_POST['adminUser'];
 $password = $_POST['adminPass'];
 $servername = 'localhost';
@@ -20,8 +23,7 @@ $connectFile = fopen($connectFile, "wa+");
 fprintf($connectFile, $connectCommand);
 fclose($connectFile);
 
-//Create database
-
+//Create database from Tickets.sql backup file
 $sql = "CREATE DATABASE $dbname";
 $result = $conn->query($sql);
 if($result == TRUE) {
@@ -32,6 +34,7 @@ if($result == TRUE) {
 
 shell_exec("mysql --user=$username --password=$password $dbname < $SourceFile");
 
+//Redirect to view.php
 header(sprintf('Location: %s', 'view.php'));
 
 $conn->close();

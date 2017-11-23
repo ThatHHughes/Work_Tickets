@@ -1,11 +1,6 @@
 <html>
 
-<style>
-.description_box {
-  width: 80%;
-  height: 40%;
-}
-</style>
+<link rel="stylesheet" type="text/css" href="css/input.css">
 
 <head>
   <title>New Ticket</title>
@@ -15,13 +10,15 @@
 
 <h1> Create New Ticket </h1>
 
+<!-- Create form prompting for all basic ticket information -->
+<!-- Redirect to insert.php  -->
 <form action="insert.php" method="post">
-Name: <input type="text" name="name" /><br><br>
-Description: <input type="text" name="description" class="description_box" /><br><br>
-Status: <input type="text" name="status" /><br><br>
-Assigned Persons: <input type="text" name="assigned_persons" /><br><br>
+Name: <br> <input type="text" name="name" /><br><br>
+Description: <br> <input type="text" name="description" class="description_box" /><br><br>
+Status: <br> <input type="text" name="status" /><br><br>
+Assigned Persons: <br> <input type="text" name="assigned_persons" /><br><br>
 
-<input type="submit" />
+<input type="submit" value="Create Ticket"/>
 </form>
 
 </body>
