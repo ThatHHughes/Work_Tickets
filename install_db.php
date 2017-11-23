@@ -15,7 +15,9 @@ if ($conn->connect_error) {
 }
 
 //Create connect.php for future connections to database
-$connectCommand = '<?php $username = ' . $username . '; $password = ' . $password . '; $servername = ' . $servername . '; $dbname = ' . $dbname . '; ?>';
+$connectCommand = '<?php $GLOBALS["username"] = "' . $username . '";
+  $GLOBALS["password"] = "' . $password . '"; $GLOBALS["servername"]
+  = "' . $servername . '"; $GLOBALS["dbname"] = "' . $dbname . '"; ?>';
 echo $connectCommand;
 
 $connectFile = 'connect.php';

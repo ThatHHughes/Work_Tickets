@@ -5,7 +5,7 @@
 // Connect to database
 include('connect.php');
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($GLOBALS['servername'], $GLOBALS['username'], $GLOBALS['password'], $GLOBALS['dbname']);
 if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
 }
@@ -26,13 +26,12 @@ if ($result->num_rows > 0) {
 }
 
 //Create variable rm_url_value to hold URL of the new ticket's README
-$name = $_POST[name];
-$name = str_replace(' ', '', $name);
-$rm_url_value = "readmes/" . $name . "_README.txt";
+$rm_url_value = "readmes/" . $new_uid . "_README.txt";
 
 //Insert data from POST Form in new.php and from the rm_url_value variable
 //into new SQL Ticket row
-$sql="INSERT INTO Ticket_Data (name,description,status,assigned_persons,rm_url,uid) VALUES ('$_POST[name]','$_POST[description]','$_POST[status]','$_POST[assigned_persons]','$rm_url_value','$new_uid')";
+$sql="INSERT INTO Ticket_Data (name,description,status,assigned_persons,rm_url,uid)
+  VALUES ('$_POST[name]','$_POST[description]','$_POST[status]','$_POST[assigned_persons]','$rm_url_value','$new_uid')";
 $result=$conn->query($sql);
 
 //Create README file
