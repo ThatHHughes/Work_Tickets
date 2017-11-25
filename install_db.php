@@ -35,8 +35,8 @@ if($result == TRUE) {
 }
 
 shell_exec("mysql --user=$username --password=$password $dbname < $SourceFile");
-shell_exec(mkdir readmes);
-shell_exec(chmod -R 777 *);
+shell_exec("mkdir readmes");
+shell_exec("chmod -R 777 *");
 
 //Redirect to view.php
 header(sprintf('Location: %s', 'view.php'));
